@@ -40,11 +40,11 @@
                         With work experience in coordination, teamwork, assertive communication. I perform with commitment and tenacity. English Level: Intermediate B2.</p>
                     
                     <div class="tab-titles">
-                        <p class="tab-links active-link">Skills</p>
-                        <p class="tab-links">Experience</p>
-                        <p class="tab-links">Education</p>
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
                     </div>
-                    <div class="tab-contents active-tab">
+                    <div class="tab-contents active-tab" id="skills">
                         <!-- skills -->
                         <ul>
                             <li><span>Full Stack Developer</span><br>Building SPA</li>
@@ -52,18 +52,18 @@
                             <li><span>Full Stack Developer</span><br>Building SPA</li>
                         </ul>
                     </div>
-                    <div class="tab-contents">
+                    <div class="tab-contents" id="experience">
                          <!-- Experience -->
                         <ul>
-                            <li><span>Full Stack Developer</span><br>Building SPA</li>
+                            <li><span>Full Stack Developer experience</span><br>Building SPA</li>
                             <li><span>Full Stack Developer</span><br>Building SPA</li>
                             <li><span>Full Stack Developer</span><br>Building SPA</li>
                         </ul>
                     </div>
-                    <div class="tab-contents">
+                    <div class="tab-contents" id="education">
                          <!-- education -->
                         <ul>
-                            <li><span>Full Stack Developer</span><br>Building SPA</li>
+                            <li><span>Full Stack Developer education</span><br>Building SPA</li>
                             <li><span>Full Stack Developer</span><br>Building SPA</li>
                             <li><span>Full Stack Developer</span><br>Building SPA</li>
                         </ul>
@@ -72,5 +72,21 @@
             </div>
         </div>
     </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks) {
+                tablink.classList.remove("active-link")
+            }
+            for(tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab")
+            }
+            event.currentTarget.classList.add("active-link")
+            document.getElementById(tabname).classList.add("active-tab")
+        }
+
+    </script>
 </body>
 </html>
